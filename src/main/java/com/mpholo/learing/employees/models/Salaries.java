@@ -19,8 +19,7 @@ public class Salaries extends BaseEntity {
 
     private int salary;
     private Set<Employees> employees = new HashSet<>();
-    private LocalDate fromDate;
-    private LocalDate toDate;
+    private  Period period;
 
 
 }

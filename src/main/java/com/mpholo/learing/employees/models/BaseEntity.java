@@ -1,6 +1,5 @@
 package com.mpholo.learing.employees.models;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

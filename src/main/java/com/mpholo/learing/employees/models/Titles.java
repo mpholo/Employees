@@ -18,6 +18,7 @@ public class Titles extends  BaseEntity {
     private LocalDate toDate;
 
     private Employees employees;
+    private Period period;
 
 
 
