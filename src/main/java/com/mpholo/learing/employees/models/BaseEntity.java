@@ -7,9 +7,8 @@ import javax.persistence.*;
 
 @Setter
 @Getter
-@Entity
 @MappedSuperclass
-public abstract class BaseEntity {
+public  class BaseEntity {
 
 
     @Id

@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Setter
 @Getter
-public abstract class  Period {
+public  class  Period {
     private LocalDate fromDate;
     private LocalDate toDate;
 

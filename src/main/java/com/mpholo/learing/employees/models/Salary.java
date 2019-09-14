@@ -7,23 +7,21 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Salaries extends BaseEntity {
+@Table(name="salaries")
+public class Salary extends BaseEntity {
 
     private int salary;
     @ManyToOne
-    @JoinColumn(name="employees_id")
-    private Set<Employees> employees = new HashSet<>();
-    private  Period period;
+    @JoinColumn(name="employee_id")
+    private Employee employee;
+    private LocalDate fromDate;
+    private LocalDate toDate;
 
 
 }

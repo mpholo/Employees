@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Setter
@@ -15,16 +16,17 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Titles extends  BaseEntity {
+@Table(name="titles")
+public class Title extends  BaseEntity {
 
     private String title;
     private LocalDate fromDate;
     private LocalDate toDate;
 
     @ManyToOne
-    @JoinColumn(name="employees_id")
-    private Employees employees;
-    private Period period;
+    @JoinColumn(name="employee_id")
+    private Employee employees;
+
 
 
 
