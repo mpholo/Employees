@@ -31,6 +31,13 @@ public class Employee extends BaseEntity {
     inverseJoinColumns = @JoinColumn(name="department_id"))
     private Set<Department> departments = new HashSet<>();
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="employee_managers",joinColumns = @JoinColumn(name="employee_id"),
+    inverseJoinColumns = @JoinColumn(name="department_id"))
+    private  Set<Department> managers = new HashSet<>();
+
+
+
 
 
 }
