@@ -20,8 +20,8 @@ public class Salary extends BaseEntity {
     @ManyToOne
     @JoinColumn(name="employee_id")
     private Employee employee;
-    private LocalDate fromDate;
-    private LocalDate toDate;
+   @Embedded
+    private Period period;
 
 
 }

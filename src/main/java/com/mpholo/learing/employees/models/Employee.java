@@ -22,6 +22,8 @@ public class Employee extends BaseEntity {
     private LocalDate birthDate;
     private String firstName;
     private String lastName;
+
+    @Enumerated(value=EnumType.STRING)
     Gender gender;
     private LocalDate hireDate;
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "employee")
