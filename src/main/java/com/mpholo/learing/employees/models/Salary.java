@@ -16,6 +16,7 @@ import java.time.LocalDate;
 @Table(name="salaries")
 public class Salary extends BaseEntity {
 
+
     private int salary;
     @ManyToOne
     @JoinColumn(name="employee_id")

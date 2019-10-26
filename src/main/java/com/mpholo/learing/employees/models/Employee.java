@@ -13,12 +13,13 @@ import java.util.Set;
 
 @Setter
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name="employees")
-public class Employee extends BaseEntity {
+public class Employee  {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long emp_no;
     private LocalDate birthDate;
     private String firstName;
     private String lastName;
