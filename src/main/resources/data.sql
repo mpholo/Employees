@@ -104,3 +104,14 @@ INSERT INTO `employees` (`emp_no`,`birth_date`,`first_name`,`last_name`,`gender`
 INSERT INTO `employees` (`emp_no`,`birth_date`,`first_name`,`last_name`,`gender`,`hire_date`) VALUES (10098,'1961-09-23','Sreekrishna','Servieres','F','1985-05-13');
 INSERT INTO `employees` (`emp_no`,`birth_date`,`first_name`,`last_name`,`gender`,`hire_date`) VALUES (10099,'1956-05-25','Valter','Sullins','F','1988-10-18');
 INSERT INTO `employees` (`emp_no`,`birth_date`,`first_name`,`last_name`,`gender`,`hire_date`) VALUES (10100,'1953-04-21','Hironobu','Haraldson','F','1987-09-21');
+
+
+INSERT INTO `departments` (`dept_no`,`dept_name`) VALUES ('d009','Customer Service');
+INSERT INTO `departments` (`dept_no`,`dept_name`) VALUES ('d005','Development');
+INSERT INTO `departments` (`dept_no`,`dept_name`) VALUES ('d002','Finance');
+INSERT INTO `departments` (`dept_no`,`dept_name`) VALUES ('d003','Human Resources');
+INSERT INTO `departments` (`dept_no`,`dept_name`) VALUES ('d001','Marketing');
+INSERT INTO `departments` (`dept_no`,`dept_name`) VALUES ('d004','Production');
+INSERT INTO `departments` (`dept_no`,`dept_name`) VALUES ('d006','Quality Management');
+INSERT INTO `departments` (`dept_no`,`dept_name`) VALUES ('d008','Research');
+INSERT INTO `departments` (`dept_no`,`dept_name`) VALUES ('d007','Sales');
