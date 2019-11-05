@@ -30,6 +30,7 @@ public class EmployeeController {
     @GetMapping("/list")
     public String showAll(Model model) {
         model.addAttribute("employees",employeeService.findAll());
+        log.info("display all employees");
         return "/employees/showall";
     }
 }

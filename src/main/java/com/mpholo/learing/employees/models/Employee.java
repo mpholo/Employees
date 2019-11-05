@@ -30,13 +30,13 @@ public class Employee  {
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "employee")
     private List<Salary> salariesList;
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name="employee_departments",joinColumns = @JoinColumn(name="employee_id"),
-    inverseJoinColumns = @JoinColumn(name="department_id"))
+    @JoinTable(name="dept_emp",joinColumns = @JoinColumn(name="emp_no"),
+    inverseJoinColumns = @JoinColumn(name="dept_no"))
     private Set<Department> departments = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name="employee_managers",joinColumns = @JoinColumn(name="employee_id"),
-    inverseJoinColumns = @JoinColumn(name="department_id"))
+    @JoinTable(name="dept_manager",joinColumns = @JoinColumn(name="emp_no"),
+    inverseJoinColumns = @JoinColumn(name="dept_no"))
     private  Set<Department> managers = new HashSet<>();
 
 
