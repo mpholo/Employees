@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Slf4j
 @Controller
-@RequestMapping("/employees")
+
 public class EmployeeController {
 
     private final EmployeeService employeeService;

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <th>
+        <tr>
+            <th>Dept No</th>
+            <th>Department Name</th>
+        </tr>
+    </th>
+    </thead>
+    <tbody>
+    <tr th:each=" department : ${__${T(com.mpholo.learing.employees.util.AttributeNames).DEPARTMENT_LIST}__}">
+        <td th:text="${department.dept_no}">1</td>
+        <td th:text="${department.deptName}">Department 1</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
