@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head">
+<head th:fragment="head(title)">
 
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -44,7 +44,7 @@
     <link th:href="@{../css/styles.css}" rel="stylesheet">
 
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="${title}">Title</title>
 </head>
 <body>
 
