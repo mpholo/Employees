@@ -1,11 +1,10 @@
-package com.mpholo.learing.employees.controllers;
+package com.mpholo.learning.employees.controllers;
 
-import com.mpholo.learing.employees.services.EmployeeService;
+import com.mpholo.learning.employees.services.EmployeeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Slf4j

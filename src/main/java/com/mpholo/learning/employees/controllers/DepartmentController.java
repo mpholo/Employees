@@ -1,10 +1,9 @@
-package com.mpholo.learing.employees.controllers;
+package com.mpholo.learning.employees.controllers;
 
-import com.mpholo.learing.employees.models.Department;
-import com.mpholo.learing.employees.services.DepartmentService;
-import com.mpholo.learing.employees.util.AttributeNames;
-import com.mpholo.learing.employees.util.EmployeeMappings;
-import com.mpholo.learing.employees.util.ViewNames;
+import com.mpholo.learning.employees.models.Department;
+import com.mpholo.learning.employees.services.DepartmentService;
+import com.mpholo.learning.employees.util.AttributeNames;
+import com.mpholo.learning.employees.util.ViewNames;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

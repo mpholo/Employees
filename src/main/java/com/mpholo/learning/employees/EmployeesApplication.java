@@ -1,4 +1,4 @@
-package com.mpholo.learing.employees;
+package com.mpholo.learning.employees;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

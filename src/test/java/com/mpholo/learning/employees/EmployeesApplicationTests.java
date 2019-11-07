@@ -1,4 +1,4 @@
-package com.mpholo.learing.employees;
+package com.mpholo.learning.employees;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.mpholo.learing.employees.services;
+package com.mpholo.learning.employees.services;
 
 import java.util.List;
 

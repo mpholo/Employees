@@ -1,6 +1,6 @@
-package com.mpholo.learing.employees.services;
+package com.mpholo.learning.employees.services;
 
-import com.mpholo.learing.employees.models.Employee;
+import com.mpholo.learning.employees.models.Employee;
 
 import java.util.List;
 

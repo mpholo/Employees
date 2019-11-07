@@ -1,7 +1,7 @@
-package com.mpholo.learing.employees.services;
+package com.mpholo.learning.employees.services;
 
-import com.mpholo.learing.employees.models.Employee;
-import com.mpholo.learing.employees.repositories.EmployeeRepository;
+import com.mpholo.learning.employees.models.Employee;
+import com.mpholo.learning.employees.repositories.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

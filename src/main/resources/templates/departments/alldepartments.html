@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/head::head}">
+<html lang="en" >
+<head id="headId">
 
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" media="screen" />
+          />
 
     <style>
         .bd-placeholder-img {
@@ -41,7 +41,7 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link th:href="@{../css/styles.css}" rel="stylesheet">
+    <link href="@{../css/styles.css}" rel="stylesheet">
 
     <meta charset="UTF-8">
     <title>Title</title>
@@ -80,9 +80,9 @@
 
     </thead>
     <tbody>
-    <tr th:each=" department : ${__${T(com.mpholo.learing.employees.util.AttributeNames).DEPARTMENT_LIST}__}">
-        <td th:text="${department.dept_no}">1</td>
-        <td th:text="${department.deptName}">Department 1</td>
+    <tr id="departmentList">
+        <td id="dept_no">1</td>
+        <td id="deptName">Department 1</td>
         <td><a href="#" class="btn btn-outline-secondary btn-sm">Details</a></td>
         <td><a href="#"  class="btn btn-outline-success btn-sm">Edit</a></td>
         <td><a href="#" class="btn btn-outline-danger btn-sm">Delete</a></td>
@@ -92,7 +92,7 @@
     </div>
 </div>
 
-<div th:replace="~{fragments/footer::footer }">
+<div id="footerId">
 <footer class="mx-5" id="footer">
     <div class="row">
         <div class="col-12 col-md">

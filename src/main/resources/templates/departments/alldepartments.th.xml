@@ -1,0 +1,24 @@
+<thlogic>
+    <attr sel="#headId"
+          th:replace="~{fragments/head::head}" />
+
+    <attr sel="#departmentList"
+          th:each=" department : ${__${T(com.mpholo.learning.employees.util.AttributeNames).DEPARTMENT_LIST}__}" />
+
+
+    <attr sel="#footerId"
+          th:replace="~{fragments/footer::footer }" />
+
+    <attr sel="#dept_no"
+          th:text="${department.dept_no}" />
+
+    <attr sel="#dedt_no"
+          th:text="${department.dept_no}" />
+
+
+    <attr sel="#deptName"
+          tth:text="${department.deptName}" />
+
+
+
+</thlogic>

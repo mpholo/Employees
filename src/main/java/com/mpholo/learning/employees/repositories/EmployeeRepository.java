@@ -1,6 +1,6 @@
-package com.mpholo.learing.employees.repositories;
+package com.mpholo.learning.employees.repositories;
 
-import com.mpholo.learing.employees.models.Employee;
+import com.mpholo.learning.employees.models.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

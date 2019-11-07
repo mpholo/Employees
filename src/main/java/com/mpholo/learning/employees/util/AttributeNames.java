@@ -1,4 +1,4 @@
-package com.mpholo.learing.employees.util;
+package com.mpholo.learning.employees.util;
 
 public final class AttributeNames {
 

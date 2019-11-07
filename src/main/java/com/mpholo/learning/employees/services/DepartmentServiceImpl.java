@@ -1,11 +1,10 @@
-package com.mpholo.learing.employees.services;
+package com.mpholo.learning.employees.services;
 
-import com.mpholo.learing.employees.models.Department;
-import com.mpholo.learing.employees.repositories.DepartmentRepository;
+import com.mpholo.learning.employees.models.Department;
+import com.mpholo.learning.employees.repositories.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

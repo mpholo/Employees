@@ -1,4 +1,4 @@
-package com.mpholo.learing.employees.models;
+package com.mpholo.learning.employees.models;
 
 import lombok.Getter;
 import lombok.Setter;
