@@ -10,7 +10,15 @@
           th:replace="~{fragments/nav::nav}" />
 
     <attr sel="#saveDeptment"
-          th:action="@{__${T(com.mpholo.learning.employees.util.DepartmentMappings).SAVE_DEPARTMENT}__}" />
+          th:action="@{__${T(com.mpholo.learning.employees.util.DepartmentMappings).SAVE_DEPARTMENT}__}"
+          th:object="${department}" />
+
+    <attr sel="#deptNo"
+          th:field="*{deptNo}"  />
+
+
+    <attr sel="#deptName"
+          th:field="*{deptName}" />
 
 
 </thlogic>

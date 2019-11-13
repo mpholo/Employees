@@ -33,15 +33,17 @@ public class DepartmentController {
     }
 
     @GetMapping(DepartmentMappings.NEW_DEPARTMENT)
-    public String addEditNew(@RequestParam(required = false,defaultValue = "-1") String dept_no, Model model) {
+    public String addEditNew(@RequestParam(name = "deptNo",required = false,defaultValue = "-1") String deptNo, Model model) {
 
-        log.info("Editing department with dept_no {}",dept_no);
-        Department department = departmentService.findById(dept_no);
+
+        Department department = departmentService.findById(deptNo);
         if(department==null) {
+            log.info("Creating new department");
             department = new Department();
         }
 
-        model.addAttribute(AttributeNames.DEPARTMENT,new Department());
+        log.info("Editing department with dept_no {}",department.getDeptNo());
+        model.addAttribute(AttributeNames.DEPARTMENT,department);
         return ViewNames.EDIT_DEPARTMENTS;
     }
 

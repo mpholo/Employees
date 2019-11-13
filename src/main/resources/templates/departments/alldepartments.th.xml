@@ -25,6 +25,10 @@
      th:href="@{__${T(com.mpholo.learning.employees.util.DepartmentMappings).NEW_DEPARTMENT}__}" />
 
 
+    <attr sel="#editDeptmentUrl"
+          th:href="@{__${T(com.mpholo.learning.employees.util.DepartmentMappings).NEW_DEPARTMENT}__(deptNo=${department.deptNo})}" />
+
+
     <attr sel="#nav"
           th:replace="~{fragments/nav::nav}" />
 
