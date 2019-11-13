@@ -19,7 +19,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Department findById(String s) {
-        return departmentRepository.findById(s).get();
+        return departmentRepository.findById(s).orElse(null);
     }
 
     @Override
@@ -43,4 +43,5 @@ public class DepartmentServiceImpl implements DepartmentService {
         departmentRepository.save(object);
 
     }
+
 }

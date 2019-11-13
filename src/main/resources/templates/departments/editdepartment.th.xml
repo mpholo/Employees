@@ -1,0 +1,16 @@
+<thlogic>
+
+    <attr sel="#head"
+          th:replace="~{fragments/head::head('Edit Department')}" />
+
+    <attr sel="#footerId"
+          th:replace="~{fragments/footer::footer }" />
+
+    <attr sel="#nav"
+          th:replace="~{fragments/nav::nav}" />
+
+    <attr sel="#saveDeptment"
+          th:action="@{__${T(com.mpholo.learning.employees.util.DepartmentMappings).SAVE_DEPARTMENT}__}" />
+
+
+</thlogic>

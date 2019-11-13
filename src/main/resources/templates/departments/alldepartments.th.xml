@@ -15,15 +15,17 @@
           th:replace="~{fragments/footer::footer }" />
 
     <attr sel="#dept_no"
-          th:text="${department.dept_no}" />
-
-    <attr sel="#dedt_no"
-          th:text="${department.dept_no}" />
+          th:text="${department.deptNo}" />
 
 
     <attr sel="#deptName"
-          tth:text="${department.deptName}" />
+          th:text="${department.deptName}" />
+
+    <attr sel="#newDeptmentUrl"
+     th:href="@{__${T(com.mpholo.learning.employees.util.DepartmentMappings).NEW_DEPARTMENT}__}" />
 
 
+    <attr sel="#nav"
+          th:replace="~{fragments/nav::nav}" />
 
 </thlogic>

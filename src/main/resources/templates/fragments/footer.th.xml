@@ -1,0 +1,7 @@
+<thlogic>
+    <attr sel="#footerId"
+          th:fragment="footer" />
+
+    <attr sel="#createdBy"
+          th:text="|Created by #{createdBy} &copy; 2019 |" />
+</thlogic>
