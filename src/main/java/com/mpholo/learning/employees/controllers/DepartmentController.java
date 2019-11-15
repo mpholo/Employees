@@ -55,4 +55,12 @@ public class DepartmentController {
 
          return "redirect:"+DepartmentMappings.ALL_DEPARTMENTS;
     }
+
+    @GetMapping(DepartmentMappings.DELETE_DEPARTMENT)
+    public String deleteDepartment(@RequestParam(name="deptNo") String deptNo) {
+        log.info("Deleting Department  with deptNo {}",deptNo);
+        departmentService.deleteById(deptNo);
+
+        return "redirect:"+DepartmentMappings.ALL_DEPARTMENTS;
+    }
 }

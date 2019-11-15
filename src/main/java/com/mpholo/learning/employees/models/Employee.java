@@ -1,5 +1,6 @@
 package com.mpholo.learning.employees.models;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,13 +12,14 @@ import java.util.Set;
 
 @Setter
 @Getter
+@EqualsAndHashCode(of="empNo")
 @Entity
 @Table(name="employees")
 public class Employee  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long emp_no;
+    private Long empNo;
     private LocalDate birthDate;
     private String firstName;
     private String lastName;
