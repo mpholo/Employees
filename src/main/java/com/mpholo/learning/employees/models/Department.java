@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Setter
 @Getter
+@ToString
 @EqualsAndHashCode(of="deptNo")
 @Entity
 @Table(name="departments")

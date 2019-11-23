@@ -14,12 +14,12 @@ public class DecoupledLogicSetup {
     private final SpringResourceTemplateResolver springResourceTemplateResolver;
 
 
-    //== constructor
+    //== constructor ==
     public DecoupledLogicSetup(SpringResourceTemplateResolver springResourceTemplateResolver) {
         this.springResourceTemplateResolver = springResourceTemplateResolver;
     }
 
-    //== init
+    //== init ==
     @PostConstruct
     public void init() {
         springResourceTemplateResolver.setUseDecoupledLogic(true);

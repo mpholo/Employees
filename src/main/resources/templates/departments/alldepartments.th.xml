@@ -26,7 +26,7 @@
 
 
     <attr sel="#editDeptmentUrl"
-          th:href="@{__${T(com.mpholo.learning.employees.util.DepartmentMappings).NEW_DEPARTMENT}__(deptNo=${department.deptNo})}" />
+          th:href="@{__${T(com.mpholo.learning.employees.util.DepartmentMappings).NEW_DEPARTMENT}__(deptNo=${department.deptNo},operation='edited')}" />
 
     <attr sel="#deleteDepartmentUrl"
             th:href="@{__${T(com.mpholo.learning.employees.util.DepartmentMappings).DELETE_DEPARTMENT}__(deptNo=${department.deptNo})}" />
@@ -34,5 +34,11 @@
 
     <attr sel="#nav"
           th:replace="~{fragments/nav::nav}" />
+
+    <attr sel="#alert-deleted"
+          th:if="${operation}!=null "/>
+
+    <attr sel="#operation-message"
+          th:text="#{operation.message(${operation})}" />
 
 </thlogic>

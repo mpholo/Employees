@@ -25,35 +25,40 @@ public class DepartmentController {
     }
 
     @GetMapping(DepartmentMappings.ALL_DEPARTMENTS)
-    public String displayDepartments(Model model) {
+    public String displayDepartments(Model model,
+                                     @RequestParam(name = "operation",required = false) String operation) {
         List<Department> departments= departmentService.findAll();
         log.info("fetched {} departments",departments.size());
+
         model.addAttribute(AttributeNames.DEPARTMENT_LIST,departments);
+        model.addAttribute(AttributeNames.DEPARTMENT_OPERATION,operation);
+
         return ViewNames.ALL_DEPARTMENTS;
     }
 
     @GetMapping(DepartmentMappings.NEW_DEPARTMENT)
-    public String addEditNew(@RequestParam(name = "deptNo",required = false,defaultValue = "-1") String deptNo, Model model) {
-
-
+    public String addEditNew(@RequestParam(name = "deptNo",required = false,defaultValue = "-1") String deptNo,
+                             @RequestParam(name="operation",required=false,defaultValue = "added") String operation ,Model model
+                               ) {
         Department department = departmentService.findById(deptNo);
         if(department==null) {
             log.info("Creating new department");
             department = new Department();
         }
 
-        log.info("Editing department with dept_no {}",department.getDeptNo());
         model.addAttribute(AttributeNames.DEPARTMENT,department);
+        model.addAttribute(AttributeNames.DEPARTMENT_OPERATION,operation);
         return ViewNames.EDIT_DEPARTMENTS;
     }
 
     @PostMapping(DepartmentMappings.SAVE_DEPARTMENT)
-    public String saveDepartment(@ModelAttribute(AttributeNames.DEPARTMENT) Department department) {
+    public String saveDepartment(@ModelAttribute(AttributeNames.DEPARTMENT) Department department,
+                                 @ModelAttribute(AttributeNames.DEPARTMENT_OPERATION) String operation) {
 
-        log.info("Department from form = {}",department);
+
         departmentService.save(department);
-
-         return "redirect:"+DepartmentMappings.ALL_DEPARTMENTS;
+        log.info("Department from form = {} saved successfully",department);
+         return "redirect:"+DepartmentMappings.ALL_DEPARTMENTS+"?operation="+operation;
     }
 
     @GetMapping(DepartmentMappings.DELETE_DEPARTMENT)
@@ -61,6 +66,7 @@ public class DepartmentController {
         log.info("Deleting Department  with deptNo {}",deptNo);
         departmentService.deleteById(deptNo);
 
-        return "redirect:"+DepartmentMappings.ALL_DEPARTMENTS;
+
+        return "redirect:"+DepartmentMappings.ALL_DEPARTMENTS+"?operation=deleted";
     }
 }

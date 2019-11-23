@@ -20,5 +20,10 @@
     <attr sel="#deptName"
           th:field="*{deptName}" />
 
+    <attr sel="#operation"
+          th:value="${operation}" />
+
+
+
 
 </thlogic>
