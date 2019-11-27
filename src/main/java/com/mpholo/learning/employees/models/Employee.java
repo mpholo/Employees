@@ -3,6 +3,7 @@ package com.mpholo.learning.employees.models;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ import java.util.Set;
 @Setter
 @Getter
 @EqualsAndHashCode(of="empNo")
+@ToString
 @Entity
 @Table(name="employees")
 public class Employee  {

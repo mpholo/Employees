@@ -38,7 +38,7 @@ public class DepartmentController {
 
     @GetMapping(DepartmentMappings.NEW_DEPARTMENT)
     public String addEditNew(@RequestParam(name = "deptNo",required = false,defaultValue = "-1") String deptNo,
-                             @RequestParam(name="operation",required=false,defaultValue = "added") String operation ,Model model
+                             @RequestParam(name="operation",required=false,defaultValue = "add") String operation ,Model model
                                ) {
         Department department = departmentService.findById(deptNo);
         if(department==null) {
