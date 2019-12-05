@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface EmployeeService extends CrudService<Employee,Long> {
 
-    List<Employee> findByfastNameAndLastName(String firstName, String lastName);
+    List<Employee> findByFirstNameAndLastName(String firstName, String lastName);
 }

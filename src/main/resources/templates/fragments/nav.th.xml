@@ -1,0 +1,10 @@
+<thlogic>
+    <attr sel="#nav"
+          th:fragment="nav" />
+
+    <attr sel="#departmentLink"
+    th:href="@{__${T(com.mpholo.learning.employees.util.DepartmentMappings).ALL_DEPARTMENTS}__}" />
+
+    <attr sel="#employeeLink"
+          th:href="@{__${T(com.mpholo.learning.employees.util.EmployeeMappings).ALL_EMPLOYEES}__}" />
+</thlogic>

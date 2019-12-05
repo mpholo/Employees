@@ -1,0 +1,27 @@
+<thlogic>
+    <attr sel="#headId"
+          th:replace="~{fragments/head::head(#{department.title})}" />
+
+    <attr sel="nav"
+          th:replace="~{fragments/nav::nav}"  />
+
+    <attr sel="#employeeList"
+      th:each="employee  : ${__${T(com.mpholo.learning.employees.util.AttributeNames).EMPLOYEE_LIST}__}" />
+
+    <attr sel="#emp_no"
+          th:text="${employee.empNo}" />
+    <attr sel="#firstName"
+          th:text="${employee.firstName}" />
+
+    <attr sel="#footerId"
+          th:replace="~{fragments/footer::footer }" />
+
+
+    <attr sel="#alert-deleted"
+          th:if="${operation}!=null "/>
+
+    <attr sel="#operation-message"
+          th:text="#{operation.message(${operation})}" />
+
+
+</thlogic>

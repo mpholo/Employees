@@ -16,7 +16,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<Employee> findByfastNameAndLastName(String firstName, String lastName) {
+    public List<Employee> findByFirstNameAndLastName(String firstName, String lastName) {
         return employeeRepository.findByFirstNameAndLastName(firstName,lastName);
     }
 
