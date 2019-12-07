@@ -12,6 +12,14 @@
           th:text="${employee.empNo}" />
     <attr sel="#firstName"
           th:text="${employee.firstName}" />
+    <attr sel="#lastName"
+          th:text="${employee.lastName}" />
+    <attr sel="#gender"
+          th:text="${employee.gender}" />
+    <attr sel="#birthDate"
+          th:text="${employee.birthDate}" />
+    <attr sel="#hireDate"
+          th:text="${employee.hireDate}" />
 
     <attr sel="#footerId"
           th:replace="~{fragments/footer::footer }" />

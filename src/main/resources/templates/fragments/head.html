@@ -2,13 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head(title)">
 
+    <!-- Bootstrap Core CSS -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" media="screen" />
 
+    <!-- Font-awesome -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           th:href="@{/webjars/font-awesome/5.11.2/css/all.min.css}" media="screen" />
+
+    <!--data table-->
+    <link href="/css/jquery.dataTable.min.css"
+          th:href="@{/webjars/datatables/1.10.19/media/css/jquery.dataTables.min.css}" rel="stylesheet" />
+    <link href="/css/dataTables.bootstrap.min.css"
+          th:href="@{/webjars/datatables/1.10.19/media/css/dataTables.bootstrap.min.css}" rel="stylesheet" />
+
 
     <style>
         .bd-placeholder-img {
@@ -34,7 +43,7 @@
             }
 
             #footer {
-                position: absolute;
+                position: relative;
                 bottom: 0;
                 width: 100%;
 

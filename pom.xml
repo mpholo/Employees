@@ -22,6 +22,7 @@
         <webjars-jquery.version>3.4.1</webjars-jquery.version>
         <font-awesome.version>5.11.2</font-awesome.version>
         <bootstrap-confirmation.version>4.1.0</bootstrap-confirmation.version>
+        <datatable.version>1.10.19</datatable.version>
     </properties>
 
     <dependencies>
@@ -89,6 +90,12 @@
             <groupId>org.webjars.npm</groupId>
             <artifactId>bootstrap-confirmation2</artifactId>
             <version>${bootstrap-confirmation.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>datatables</artifactId>
+            <version>${datatable.version}</version>
         </dependency>
 
     </dependencies>
