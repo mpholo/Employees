@@ -31,15 +31,10 @@ public class Employee  {
     private LocalDate hireDate;
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "employee")
     private List<Salary> salariesList;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name="dept_emp",joinColumns = @JoinColumn(name="emp_no"),
-    inverseJoinColumns = @JoinColumn(name="dept_no"))
-    private Set<Department> departments = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name="dept_manager",joinColumns = @JoinColumn(name="emp_no"),
-    inverseJoinColumns = @JoinColumn(name="dept_no"))
-    private  Set<Department> managers = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "employee")
+    private List<DeptEmp> deptEmps;
+
 
 
 

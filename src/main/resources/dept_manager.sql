@@ -1,8 +1,8 @@
 /*
--- Query: SELECT * FROM employees.dept_manager
+-- Query: SELECT * FROM employees.dept_manager where  emp_no in(select emp_no from employees.employees)
 LIMIT 0, 1000
 
--- Date: 2019-12-05 20:41
+-- Date: 2019-12-20 00:54
 */
 INSERT INTO `dept_manager` (`emp_no`,`dept_no`,`from_date`,`to_date`) VALUES (110022,'d001','1985-01-01','1991-10-01');
 INSERT INTO `dept_manager` (`emp_no`,`dept_no`,`from_date`,`to_date`) VALUES (110039,'d001','1991-10-01','9999-01-01');
