@@ -69,4 +69,18 @@ public class DepartmentController {
 
         return "redirect:"+DepartmentMappings.ALL_DEPARTMENTS+"?operation=deleted";
     }
+
+    @GetMapping(DepartmentMappings.DEPARTMENT_DETAILS)
+    public String departmentDetails(@RequestParam(name="deptNo") String deptNo,Model model) {
+
+        Department department = departmentService.findById(deptNo);
+        model.addAttribute(AttributeNames.DEPARTMENT,department);
+
+//        model.addAttribute(AttributeNames.DEPARTMENT_MANAGERS,);
+
+//        int employeeCount = departmentService.
+//        model.addAttribute(AttributeNames.DEPARTMENT_EMPLOYEE_COUNT,7));
+        return ViewNames.DEPARTMENT_DETAILS;
+
+    }
 }

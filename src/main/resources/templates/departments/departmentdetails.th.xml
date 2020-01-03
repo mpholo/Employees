@@ -1,0 +1,18 @@
+<thlogic>
+    <attr sel="#headId"
+          th:replace="~{fragments/head::head(#{department.details.title})}" />
+
+    <attr sel="#nav"
+          th:replace="~{fragments/nav::nav}" />
+
+    <attr sel="#footerId"
+          th:replace="~{fragments/footer::footer }" />
+
+
+    <attr sel="#dept_no"
+          th:text="${department.deptNo}" />
+
+
+    <attr sel="#deptName"
+          th:text="${department.deptName}" />
+</thlogic>
