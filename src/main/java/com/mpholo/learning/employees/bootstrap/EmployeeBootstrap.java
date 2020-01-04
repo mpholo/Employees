@@ -27,10 +27,10 @@ public class EmployeeBootstrap implements ApplicationListener<ContextRefreshedEv
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-       List<Department> departments = departmentRepository.findAll();
-       departmentRepository.saveAll(departments);
-
-       List<Employee> employees = employeeRepository.findAll();
-       employeeRepository.saveAll(employees);
+//       List<Department> departments = departmentRepository.findAll();
+//       departmentRepository.saveAll(departments);
+//
+//       List<Employee> employees = employeeRepository.findAll();
+//       employeeRepository.saveAll(employees);
     }
 }

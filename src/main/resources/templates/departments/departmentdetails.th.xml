@@ -12,7 +12,22 @@
     <attr sel="#dept_no"
           th:text="${department.deptNo}" />
 
+    <attr sel="#emp_no"
+          th:text="${deptManager.employee.empNo}" />
+
+    <attr sel="#emp_name"
+          th:text="${deptManager.employee.firstName +' '+ deptManager.employee.lastName}" />
+
+    <attr sel="#from_date"
+          th:text="${deptManager.period.fromDate}" />
+
+    <attr sel="#to_date"
+          th:text="${deptManager.period.toDate}" />
 
     <attr sel="#deptName"
           th:text="${department.deptName}" />
+
+    <attr sel="#deptManagerList"
+          th:each=" deptManager : ${__${T(com.mpholo.learning.employees.util.AttributeNames).DEPT_MANAGER_LIST}__}" />
+
 </thlogic>

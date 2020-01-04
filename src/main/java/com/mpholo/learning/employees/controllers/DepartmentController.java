@@ -1,6 +1,8 @@
 package com.mpholo.learning.employees.controllers;
 
 import com.mpholo.learning.employees.models.Department;
+import com.mpholo.learning.employees.models.DeptManager;
+import com.mpholo.learning.employees.repositories.DeptManagerRepository;
 import com.mpholo.learning.employees.services.DepartmentService;
 import com.mpholo.learning.employees.util.AttributeNames;
 import com.mpholo.learning.employees.util.DepartmentMappings;
@@ -12,16 +14,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Controller
 public class DepartmentController {
 
     private final DepartmentService departmentService;
+    private final DeptManagerRepository deptManagerRepository;
 
     @Autowired
-    public DepartmentController(DepartmentService departmentService) {
+    public DepartmentController(DepartmentService departmentService, DeptManagerRepository deptManagerRepository) {
         this.departmentService = departmentService;
+        this.deptManagerRepository = deptManagerRepository;
     }
 
     @GetMapping(DepartmentMappings.ALL_DEPARTMENTS)
@@ -76,7 +81,14 @@ public class DepartmentController {
         Department department = departmentService.findById(deptNo);
         model.addAttribute(AttributeNames.DEPARTMENT,department);
 
-//        model.addAttribute(AttributeNames.DEPARTMENT_MANAGERS,);
+        //sort deptManager list by fromDate descending
+        List<DeptManager> deptManagers = deptManagerRepository.findByEmpDeptRelationDeptNo(deptNo)
+                                         .stream().sorted((a,b)->b.getPeriod().getFromDate().compareTo(a.getPeriod().getFromDate()))
+                                         .collect(Collectors.toList());
+
+
+
+        model.addAttribute(AttributeNames.DEPT_MANAGER_LIST,deptManagers);
 
 //        int employeeCount = departmentService.
 //        model.addAttribute(AttributeNames.DEPARTMENT_EMPLOYEE_COUNT,7));

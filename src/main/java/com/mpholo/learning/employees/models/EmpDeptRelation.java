@@ -1,9 +1,13 @@
 package com.mpholo.learning.employees.models;
 
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
+@Setter
+@Getter
 @MappedSuperclass
 @EqualsAndHashCode(of={"empNo","deptNo"})
 public class EmpDeptRelation {
