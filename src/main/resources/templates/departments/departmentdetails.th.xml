@@ -15,6 +15,16 @@
     <attr sel="#emp_no"
           th:text="${deptManager.employee.empNo}" />
 
+
+    <attr sel="#deptName"
+          th:text="${department.deptName}" />
+
+    <attr sel="#deptManagerList"
+          th:each=" deptManager : ${__${T(com.mpholo.learning.employees.util.AttributeNames).DEPT_MANAGER_LIST}__}" />
+
+    <attr sel="#deptManagerCount"
+          th:text="${#numbers.formatInteger(__${T(com.mpholo.learning.employees.util.AttributeNames).DEPT_MANAGER_COUNT}__,3,'COMMA')}" />
+
     <attr sel="#emp_name"
           th:text="${deptManager.employee.firstName +' '+ deptManager.employee.lastName}" />
 
@@ -24,10 +34,23 @@
     <attr sel="#to_date"
           th:text="${deptManager.period.toDate}" />
 
-    <attr sel="#deptName"
-          th:text="${department.deptName}" />
 
-    <attr sel="#deptManagerList"
-          th:each=" deptManager : ${__${T(com.mpholo.learning.employees.util.AttributeNames).DEPT_MANAGER_LIST}__}" />
+
+    <attr sel="#deptEmpList"
+          th:each=" deptEmp : ${__${T(com.mpholo.learning.employees.util.AttributeNames).DEPT_EMP_LIST}__}" />
+
+    <attr sel="#deptEmpCount"
+          th:text="${#numbers.formatInteger(__${T(com.mpholo.learning.employees.util.AttributeNames).DEPT_EMP_COUNT}__,3,'COMMA')}" />
+
+
+    <attr sel="#emp_name2"
+          th:text="${deptEmp.employee.firstName +' '+ deptEmp.employee.lastName}" />
+
+    <attr sel="#from_date2"
+          th:text="${deptEmp.period.fromDate}" />
+
+    <attr sel="#to_date2"
+          th:text="${deptEmp.period.toDate}" />
+
 
 </thlogic>

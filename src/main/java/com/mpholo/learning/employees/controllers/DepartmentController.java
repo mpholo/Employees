@@ -1,7 +1,9 @@
 package com.mpholo.learning.employees.controllers;
 
 import com.mpholo.learning.employees.models.Department;
+import com.mpholo.learning.employees.models.DeptEmp;
 import com.mpholo.learning.employees.models.DeptManager;
+import com.mpholo.learning.employees.repositories.DeptEmpRepository;
 import com.mpholo.learning.employees.repositories.DeptManagerRepository;
 import com.mpholo.learning.employees.services.DepartmentService;
 import com.mpholo.learning.employees.util.AttributeNames;
@@ -14,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -22,11 +25,14 @@ public class DepartmentController {
 
     private final DepartmentService departmentService;
     private final DeptManagerRepository deptManagerRepository;
+    private final DeptEmpRepository deptEmpRepository;
 
     @Autowired
-    public DepartmentController(DepartmentService departmentService, DeptManagerRepository deptManagerRepository) {
+    public DepartmentController(DepartmentService departmentService, DeptManagerRepository deptManagerRepository,
+                                DeptEmpRepository deptEmpRepository) {
         this.departmentService = departmentService;
         this.deptManagerRepository = deptManagerRepository;
+        this.deptEmpRepository = deptEmpRepository;
     }
 
     @GetMapping(DepartmentMappings.ALL_DEPARTMENTS)
@@ -81,17 +87,21 @@ public class DepartmentController {
         Department department = departmentService.findById(deptNo);
         model.addAttribute(AttributeNames.DEPARTMENT,department);
 
-        //sort deptManager list by fromDate descending
+        //sort deptManager list by fromDate in descending order
         List<DeptManager> deptManagers = deptManagerRepository.findByEmpDeptRelationDeptNo(deptNo)
                                          .stream().sorted((a,b)->b.getPeriod().getFromDate().compareTo(a.getPeriod().getFromDate()))
                                          .collect(Collectors.toList());
 
-
-
         model.addAttribute(AttributeNames.DEPT_MANAGER_LIST,deptManagers);
 
-//        int employeeCount = departmentService.
-//        model.addAttribute(AttributeNames.DEPARTMENT_EMPLOYEE_COUNT,7));
+        //show employees for department
+        List<DeptEmp> deptEmp = deptEmpRepository.findByEmpDeptRelationDeptNo(deptNo);
+        model.addAttribute(AttributeNames.DEPT_EMP_LIST,deptEmp);
+
+        //==counters==
+        model.addAttribute(AttributeNames.DEPT_EMP_COUNT,deptEmp.size());
+        model.addAttribute(AttributeNames.DEPT_MANAGER_COUNT,deptManagers.size());
+
         return ViewNames.DEPARTMENT_DETAILS;
 
     }
