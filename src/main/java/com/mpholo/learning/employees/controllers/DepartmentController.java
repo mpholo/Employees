@@ -35,7 +35,7 @@ public class DepartmentController {
         this.deptEmpRepository = deptEmpRepository;
     }
 
-    @GetMapping(DepartmentMappings.ALL_DEPARTMENTS)
+    @GetMapping({DepartmentMappings.ALL_DEPARTMENTS,"departments"})
     public String displayDepartments(Model model,
                                      @RequestParam(name = "operation",required = false) String operation) {
         List<Department> departments= departmentService.findAll();

@@ -19,7 +19,7 @@ public class Title extends  BaseEntity {
 
     @ManyToOne
     @JoinColumn(name="employee_id")
-    private Employee employees;
+    private Employee employee;
 
 
 

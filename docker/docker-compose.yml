@@ -1,0 +1,9 @@
+version: "3"
+
+service:
+  db:
+    image: mysql:latest
+    ports:
+      - "5433:5432"
+    volumes:
+      -/tmp
