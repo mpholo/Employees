@@ -15,6 +15,9 @@ public final class AttributeNames {
 
     //==employees==
     public static final String EMPLOYEE_LIST="employees";
+    public static final String EMPLOYEE="employee";
+    public static final String SALARY_LIST="employee.salariesList";
+    public static final String TITLE_LIST="employee.titlesList";
 
     //==counters==
     public static final String DEPT_EMP_COUNT="dept_emp_count";

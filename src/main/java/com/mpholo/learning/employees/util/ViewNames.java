@@ -9,7 +9,7 @@ public final class ViewNames {
 
     //==employee views==
     public static final String ALL_EMPLOYEES="employees/allemployees";
-
+    public static final String EMPLOYEE_DETAILS="employees/employeedetails";
 
     private  ViewNames() {}
 }

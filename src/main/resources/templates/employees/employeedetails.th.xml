@@ -5,11 +5,8 @@
     <attr sel="nav"
           th:replace="~{fragments/nav::nav}"  />
 
-    <attr sel="#employeeList"
-          th:each="employee  : ${__${T(com.mpholo.learning.employees.util.AttributeNames).EMPLOYEE_LIST}__}" />
 
-
-    <attr sel="#empNo"
+    <attr sel="#emp_no"
           th:text="${employee.empNo}" />
     <attr sel="#firstName"
           th:text="${employee.firstName}" />
@@ -32,7 +29,34 @@
     <attr sel="#operation-message"
           th:text="#{operation.message(${operation})}" />
 
-    <attr sel="#employeeDetailsLink"
-          th:href="@{__${T(com.mpholo.learning.employees.util.EmployeeMappings).EMPLOYEE_DETAILS}__(empNo=${employee.empNo})}" />
+    <attr sel="#salariesList"
+          th:each="salary  : ${__${T(com.mpholo.learning.employees.util.AttributeNames).SALARY_LIST}__}"  />
+
+    <attr sel="#amount"
+          th:text="${salary.salary}"  />
+
+    <attr sel="#fromDateSalary"
+          th:text="${salary.salaryId.fromDate}"  />
+
+    <attr sel="#toDate"
+          th:text="${salary.toDate}"  />
+
+
+    <attr sel="#titlesList"
+          th:each="title  : ${__${T(com.mpholo.learning.employees.util.AttributeNames).TITLE_LIST}__}"  />
+
+    <attr sel="#fromDateTitle"
+          th:text="${title.titleId.FromDate.fromDate}"  />
+
+    <attr sel="#toDateTitle"
+          th:text="${title.toDate}"  />
+
+    <attr sel="#title"
+          th:text="${title.titleId.title}"  />
+
+
+
+
+
 
 </thlogic>

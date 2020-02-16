@@ -3,7 +3,6 @@ package com.mpholo.learning.employees.services;
 import com.mpholo.learning.employees.DTO.TitleDTO;
 import com.mpholo.learning.employees.mapper.TitleMapper;
 import com.mpholo.learning.employees.models.Employee;
-import com.mpholo.learning.employees.models.Title;
 import com.mpholo.learning.employees.repositories.TitleRepository;
 import org.springframework.stereotype.Service;
 

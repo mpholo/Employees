@@ -3,6 +3,8 @@ package com.mpholo.learning.employees.models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDate;
 
 @Setter
 @Getter
@@ -11,14 +13,16 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name="titles")
-public class Title extends  BaseEntity {
+public class Title implements Serializable {
 
-    private String title;
-    @Embedded
-    private Period period;
+   @EmbeddedId
+   private TitleId titleId;
 
-    @ManyToOne
-    @JoinColumn(name="employee_id")
+   private LocalDate toDate;
+
+    @ManyToOne(fetch=FetchType.EAGER)
+    @MapsId("emp_no")
+    @JoinColumn(name="empNo")
     private Employee employee;
 
 

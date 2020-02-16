@@ -4,6 +4,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -29,11 +31,15 @@ public class Employee  {
     @Enumerated(value=EnumType.STRING)
     Gender gender;
     private LocalDate hireDate;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "employee")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "employee",fetch = FetchType.EAGER)
     private List<Salary> salariesList;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "employee")
     private List<DeptEmp> deptEmps;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "employee",fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<Title> titlesList;
 
 
 

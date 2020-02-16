@@ -2,10 +2,24 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head(title)">
 
+<!--    jquery-->
+    <script th:src="@{~/webjars/jquery/3.4.1/jquery.min.js}"></script>
+
+
+    <!--    poppers-->
+    <script th:src="@{~/webjars/popper.js/2.0.2/umd/popper.min.js}"></script>
+
+
+    <!--    bootstrap js-->
+    <script th:src="@{/webjars/bootstrap/4.4.1/js/bootstrap.min.js}"></script>
+
+
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" media="screen" />
+          th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.min.css}" media="screen" />
+
+
 
     <!-- Font-awesome -->
     <link rel="stylesheet"
