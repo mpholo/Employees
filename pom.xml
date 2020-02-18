@@ -17,6 +17,9 @@
 
     <properties>
         <java.version>11</java.version>
+        <junit.jupiter.version>5.4.1</junit.jupiter.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
         <!-- Web dependencies -->
         <webjars-bootstrap.version>4.4.1</webjars-bootstrap.version>
         <webjars-jquery.version>3.4.1</webjars-jquery.version>
@@ -58,10 +61,18 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+<!--        exclude junit 4-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>junit</artifactId>
+                    <groupId>juniy</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -86,6 +97,19 @@
             <version>${org.mapstruct.version}</version>
         </dependency>
 
+<!--        for junit5-->
+          <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+                  <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>runtime</scope>
+        </dependency>
 
         <!--webjars-->
         <dependency>
@@ -122,32 +146,6 @@
             <groupId>org.webjars</groupId>
             <artifactId>popper.js</artifactId>
             <version>${popper.version}</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -195,6 +193,12 @@
                         <compilerArg>-Amapstruct.defaultComponentModel=spring</compilerArg>
                     </compilerArgs>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>2.22.1</version>
             </plugin>
         </plugins>
     </build>

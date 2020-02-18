@@ -39,7 +39,7 @@ public class DepartmentController {
     public String displayDepartments(Model model,
                                      @RequestParam(name = "operation",required = false) String operation) {
         List<Department> departments= departmentService.findAll();
-        log.info("fetched {} departments",departments.size());
+        log.info("fetching all departments");
 
         model.addAttribute(AttributeNames.DEPARTMENT_LIST,departments);
         model.addAttribute(AttributeNames.DEPARTMENT_OPERATION,operation);
