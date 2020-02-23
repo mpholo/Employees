@@ -6,6 +6,7 @@ import com.mpholo.learning.employees.repositories.DepartmentRepository;
 import com.mpholo.learning.employees.repositories.EmployeeRepository;
 import com.mpholo.learning.employees.services.DepartmentService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -15,7 +16,7 @@ import java.util.List;
 
 @Slf4j
 @Component
-public class EmployeeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
+public class EmployeeBootstrap implements CommandLineRunner {
 
     DepartmentRepository departmentRepository;
     EmployeeRepository employeeRepository;
@@ -26,11 +27,11 @@ public class EmployeeBootstrap implements ApplicationListener<ContextRefreshedEv
     }
 
     @Override
-    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-//       List<Department> departments = departmentRepository.findAll();
-//       departmentRepository.saveAll(departments);
-//
-//       List<Employee> employees = employeeRepository.findAll();
-//       employeeRepository.saveAll(employees);
+    public void run(String... args) throws  Exception {
+       List<Department> departments = departmentRepository.findAll();
+       departmentRepository.saveAll(departments);
+
+       List<Employee> employees = employeeRepository.findAll();
+       employeeRepository.saveAll(employees);
     }
 }
