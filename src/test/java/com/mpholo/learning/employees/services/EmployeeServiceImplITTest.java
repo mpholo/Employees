@@ -122,9 +122,6 @@ class EmployeeServiceImplITTest {
         employeeService.save(employee);
         assertThat(employeeService.findAll().size(),equalTo(counter+1));
 
-
-
-
     }
 
     private void EmployeesInit() {

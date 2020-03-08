@@ -1,0 +1,14 @@
+FROM openjdk
+
+#RUN apt-get update
+
+#RUN apt-get -y install software-properties-common
+#RUN add-apt-repository -y ppa:openjdk-r/ppa
+#RUN apt-get update
+
+#RUN apt-get -y install openjdk-11-jdk
+
+VOLUME /tmp
+ADD maven/${fileName}.jar ${fileName}.jar
+RUN sh -c 'touch /myapp.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/${fileName}.jar"]
